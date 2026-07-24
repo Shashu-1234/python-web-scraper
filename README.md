@@ -8,7 +8,7 @@ An open-source Python project that extracts quotes, authors, and tags from
 [Quotes to Scrape](https://quotes.toscrape.com/) and stores them in a CSV file.
 The website is intended for web-scraping practice.
 
-**Live application:** [python-web-scraper.vercel.app](https://python-web-scraper.vercel.app)
+**Live application:** [python-web-scraper-tau.vercel.app](https://python-web-scraper-tau.vercel.app)
 
 ## Features
 
