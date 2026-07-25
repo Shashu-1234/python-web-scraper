@@ -8,6 +8,8 @@ An open-source Python project that extracts quotes, authors, and tags from
 [Quotes to Scrape](https://quotes.toscrape.com/) and stores them in a CSV file.
 The website is intended for web-scraping practice.
 
+**Live application:** [python-web-scraper-tau.vercel.app](https://python-web-scraper-tau.vercel.app)
+
 ## Features
 
 - Scrapes every available page or a user-defined number of pages.
@@ -15,6 +17,7 @@ The website is intended for web-scraping practice.
 - Saves UTF-8 CSV output that opens correctly in Excel.
 - Includes request timeouts, retries, logging, and polite request delays.
 - Includes automated tests, linting, and GitHub Actions.
+- Includes a responsive Flask interface with JSON and CSV endpoints.
 - Requires code-owner review for pull requests when branch protection is enabled.
 
 ## Project Structure
@@ -28,16 +31,21 @@ python-web-scraper/
 │   └── pull_request_template.md
 ├── data/
 │   └── .gitkeep
+├── templates/
+│   └── index.html
 ├── tests/
+│   ├── test_app.py
 │   └── test_scraper.py
 ├── .gitignore
+├── app.py
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── pyproject.toml
 ├── README.md
 ├── requirements-dev.txt
 ├── requirements.txt
-└── scraper.py
+├── scraper.py
+└── vercel.json
 ```
 
 ## Requirements
@@ -80,6 +88,27 @@ pip install -r requirements.txt
 ```
 
 ## Usage
+
+### Web application
+
+Run the Flask interface locally:
+
+```bash
+flask --app app run --debug
+```
+
+Open `http://127.0.0.1:5000`, select how many pages to scrape, and choose
+**Run scraper** or **Download CSV**.
+
+Available endpoints:
+
+```text
+GET  /api/health
+POST /api/scrape
+GET  /api/download?pages=1
+```
+
+### Command-line application
 
 Scrape all available pages:
 
